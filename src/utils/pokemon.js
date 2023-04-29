@@ -3,6 +3,15 @@ export const getAllPokemon = (url) => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => resolve(data))
-      .catch((error) => reject("error"));
+      .catch((error) => reject("error: getAllPokemon"));
+  });
+};
+
+export const getPokemon = (url) => {
+  return new Promise((resolve, reject) => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => resolve(data))
+      .catch((error) => reject("error:getPokemon"));
   });
 };
