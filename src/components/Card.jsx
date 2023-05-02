@@ -1,9 +1,33 @@
-import React from 'react'
+import React from "react";
 
-const Card = () => {
+const Card = ({ pokemon }) => {
   return (
-    <div>Card</div>
-  )
-}
+    <div className="card">
+      <div className="image">
+        <img src={pokemon.sprites.front_default} alt="" />
+      </div>
+      <h3 className="name">
+        No.{pokemon.id} {pokemon.name}
+      </h3>
+      <div className="data">
+        <p>高さ：{pokemon.height}m</p>
+        <p>重さ：{pokemon.weight}kg</p>
+      </div>
+      <div className="types">
+        <p>
+          タイプ：
+          {pokemon.types
+            .map((type) => {
+              return type.type.name;
+            })
+            .join(", ")}
+        </p>
+      </div>
+      <div className="ability">
+        <p>アビリティ：{pokemon.abilities[0].ability.name}</p>
+      </div>
+    </div>
+  );
+};
 
-export default Card
+export default Card;
