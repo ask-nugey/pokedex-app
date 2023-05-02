@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import { getAllPokemon, getPokemon } from './utils/pokemon';
 import Card from './components/Card';
+import Header from './components/Header';
 
 function App() {
   const initialURL = "https://pokeapi.co/api/v2/pokemon";
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <>
+      <Header />
       <div>
         {loading ? (
           <h1>ロード中</h1>
