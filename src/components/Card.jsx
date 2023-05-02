@@ -7,7 +7,7 @@ const Card = ({ pokemon }) => {
         <img src={pokemon.sprites.front_default} alt="" />
       </div>
       <h3 className="name">
-        No.{pokemon.id} {pokemon.name}
+        <span>No.{("000" + pokemon.id).slice(-3)}</span> {pokemon.name}
       </h3>
       <div className="data">
         <p>高さ：{pokemon.height}m</p>
