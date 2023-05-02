@@ -13,7 +13,7 @@ function App() {
       // 全てのポケモンデータを取得
       let res = await getAllPokemon(initialURL);
       // 各ポケモンの詳細データを取得
-      loadPokemon(res.results);
+      await loadPokemon(res.results);
       setLoading(false);
     }
     fetchPokemonData()
@@ -36,7 +36,7 @@ function App() {
           <h1>ロード中</h1>
         ) : (
           <div className="conainer">
-            {pokemonData?.map((pokemon, i) => {
+            {pokemonData.map((pokemon, i) => {
               return <Card key={i} pokemon={pokemon} />;
             })}
           </div>
